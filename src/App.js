@@ -12,7 +12,18 @@ function App() {
   
   console.log(totalTask)
  
- 
+  function allowDrop(ev) {
+    ev.preventDefault();
+  }
+  
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+  }
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
   return (
 
     <div className='App'>
@@ -25,27 +36,32 @@ function App() {
    </div>
    <div className='work-Container'>
    <div className='workContainerCard'>
-   <div className='worktoDo'>Work To Do</div>
-   <div className='ediv' >
+   <div className='worktoDo'>heading</div>
+  
+   <div className='dragDiv' id="div1" onDrop={(event) => drop(event) } onDragOver={(event) =>allowDrop(event)} onDragStart={(event) =>drag(event)} >
    {
      totalTask.map((el,i) => {
        return(
-         <div className='elementdiv' key={i}>{el}</div>
+         <div  id={`drag${i+1}`} src="img_logo.gif" draggable="true" onDragStart={(event) =>drag(event)} width="336" height="300">
+   <div className='elementdiv '>{el} </div>
+   </div>
        )
      })
    }
    </div>
    </div>
+ 
+   
    <div className='workContainerCard'>
-   <div className='workinProgress'>Work In Progress</div>
+   <div className='workinProgress'>heading</div>
+   <div  id="div1" onDrop={(event) => drop(event) }  onDragOver={(event) =>allowDrop(event)} onDragStart={(event) =>drag(event)}></div>
+   
    </div>
    <div className='workContainerCard'>
-   <div className='workinDone'>Done</div>
+   <div className='workinDone'>heading</div>
+   <div id="div1" onDrop={(event) => drop(event) } onDragOver={(event) =>allowDrop(event)} onDragStart={(event) =>drag(event)}></div>
+</div>
    </div>
-
-   </div>
-  
-    
     </div>
     
   )

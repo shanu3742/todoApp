@@ -5,10 +5,11 @@
 }
 
 #div1 {
-  width: 350px;
-  height: 70px;
+  width: 100%;
+  height: 90%;
   padding: 10px;
-  border: 1px solid #aaaaaa;
+  border: 1px solid white;
+  background-color: white;
 }
 .input_container {
   width: 50%;
@@ -63,6 +64,9 @@
   z-index: 5;
   border-radius: 5%;
   box-shadow: 1px 1px 1px 4px gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .worktoDo {
   display: flex;
@@ -114,3 +118,6 @@
 .ediv {
   background-color: white;
 }
+/* .dragDiv {
+  height: 200px;
+} */
