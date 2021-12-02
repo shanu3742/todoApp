@@ -54,12 +54,12 @@ function App() {
    
    <div className='workContainerCard'>
    <div className='workinProgress'>heading</div>
-   <div  id="div1" onDrop={(event) => drop(event) }  onDragOver={(event) =>allowDrop(event)} onDragStart={(event) =>drag(event)}></div>
+   <div className='progressdiv' id="div1" onDrop={(event) => drop(event) }  onDragOver={(event) =>allowDrop(event)} onDragStart={(event) =>drag(event)}></div>
    
    </div>
    <div className='workContainerCard'>
    <div className='workinDone'>heading</div>
-   <div id="div1" onDrop={(event) => drop(event) } onDragOver={(event) =>allowDrop(event)} onDragStart={(event) =>drag(event)}></div>
+   <div className='successdiv' id="div1" onDrop={(event) => drop(event) } onDragOver={(event) =>allowDrop(event)} onDragStart={(event) =>drag(event)}></div>
 </div>
    </div>
     </div>
